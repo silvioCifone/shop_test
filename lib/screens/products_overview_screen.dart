@@ -3,7 +3,7 @@ import 'package:shop_test/models/product.dart';
 import 'package:shop_test/widgets/product_item.dart';
 
 class ProductsOverviewScreen extends StatelessWidget {
-  final List<Product> loadedProducts = [
+  final List<Product> _loadedProducts = [
     Product(
       id: "p1",
       title: "Red Shirt",
@@ -46,9 +46,9 @@ class ProductsOverviewScreen extends StatelessWidget {
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(10.0),
-        itemCount: loadedProducts.length,
-        itemBuilder: (context, index) => ProductItem(loadedProducts[index].id,
-            loadedProducts[index].title, loadedProducts[index].imageUrl),
+        itemCount: _loadedProducts.length,
+        itemBuilder: (context, index) => ProductItem(_loadedProducts[index].id,
+            _loadedProducts[index].title, _loadedProducts[index].imageUrl),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3 / 2,
